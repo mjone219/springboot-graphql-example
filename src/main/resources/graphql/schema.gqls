@@ -1,0 +1,23 @@
+type Query {
+    listBooks(count: Int = 5, offset: Int = 0): [Book]!
+    bookById(id: ID): Book
+}
+
+type Mutation {
+    addBook(title: String!, pageCount: Int!, authorId: String!) : Book!
+    updateBook(id: ID!, title: String, pageCount: Int, authorId: String) : Book!
+    addAuthor(firstName: String!, lastName: String!) : Author!
+}
+
+type Book {
+    id: ID
+    title: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}

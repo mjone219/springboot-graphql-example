@@ -1,0 +1,47 @@
+query bookDetails {
+  bookById(id: "00000000-0000-0000-0000-000000000000") {
+    id
+    title
+    pageCount
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
+query listBooks {
+  listBooks(count: 5, offset: 0) {
+    id
+    title
+    pageCount
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation {
+  addAuthor(firstName: "Brandon", lastName: "Sanderson") {
+    id
+    firstName
+    lastName
+  }
+}
+
+mutation {
+  addBook(title: "Mistborn", pageCount: 541, authorId: "308ab978-8635-4656-b9e1-2c8b7d870ec7") {
+    id
+    title
+    pageCount
+    author {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
